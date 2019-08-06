@@ -3,20 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.4.5",
+    "@fundflow/apollo-redux-form": "^1.1.5",
     "@types/jest": "24.0.13",
     "@types/node": "12.0.4",
-    "@types/react": "16.8.19",
     "@types/react-dom": "16.8.4",
+    "apollo-boost": "^0.4.3",
+    "apollo-cache-inmemory": "^1.6.2",
+    "apollo-client": "^2.6.3",
+    "apollo-link": "^1.2.12",
+    "apollo-link-context": "^1.0.18",
+    "apollo-link-error": "^1.1.11",
+    "apollo-link-http": "^1.5.15",
+    "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
     "react": "^16.8.6",
+    "react-apollo": "^2.5.8",
     "react-dom": "^16.8.6",
+    "react-google-maps": "^9.4.5",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.4",
     "typescript": "3.5.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=8000 react-scripts start",
+    "apollo-codegen": "./node_modules/.bin/apollo-codegen",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "update_graphql_interfaces": "apollo-codegen download-schema http://localhost:3000/graphql --output schema.json && apollo-codegen generate 'src/**/*.ts' --tag-name 'gql' --schema schema.json --target typescript --output src/graphql_interfaces.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,5 +50,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.2.1",
+    "@types/react": "^16.8.19",
+    "@types/react-redux": "^7.1.1",
+    "@types/react-router-dom": "^4.3.4",
+    "apollo-codegen": "0.19.1",
+    "@types/redux-form": "^8.1.4"
   }
 }

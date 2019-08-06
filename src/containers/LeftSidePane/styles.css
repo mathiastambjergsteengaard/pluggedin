@@ -1,0 +1,19 @@
+#left-side-pane-container-open {
+  height: 100%;
+  position: absolute;
+  top: 50px;
+  width: 400px;
+  background-color: white;
+  left: 0px;
+  z-index: 10;
+}
+
+#left-side-pane-container-closed {
+  height: 100%;
+  position: absolute;
+  top: 50px;
+  width: 50px;
+  background-color: white;
+  left: 0px;
+  z-index: 10;
+}

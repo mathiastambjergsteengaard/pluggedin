@@ -1,10 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-
-ReactDOM.render(<App />, document.getElementById('root'));
+import React from "react";
+import { ApolloProvider } from "react-apollo";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { client } from "./apollo";
+import App from "./App";
+import "./index.css";
+import store from "./redux/reducers/store";
+import * as serviceWorker from "./serviceWorker";
+ReactDOM.render(
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </ApolloProvider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
